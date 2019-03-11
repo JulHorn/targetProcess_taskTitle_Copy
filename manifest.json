@@ -2,20 +2,6 @@
   "name": "Target Process Task Title Copy Tool",
   "description": "Copies the formatted task title to the clipboard",
   "version": "0.1",
-  "permissions": [
-    "tabs",
-    "activeTab",
-    "http://*/"
-  ],
-  "commands": {
-    "copyTitle": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+Y",
-        "mac": "Command+Shift+Y"
-      },
-      "description": "Copies the formatted task title to the clipboard"
-    }
-  },
   "content_scripts": [   {
     "matches":  ["http://*/*", "https://*/*"],
     "js": ["content/content.js"]
