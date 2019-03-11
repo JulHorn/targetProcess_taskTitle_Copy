@@ -11,7 +11,8 @@ document.addEventListener('keydown', function(event){
 		var resultText = '';
 
 		if (selectedCard) {
-			resultText = '[TASK] #' + selectedCard.getAttribute('data-entity-id') + ' ' + JSON.parse(selectedCard.getAttribute('data-card-data')).name;
+			var type = '[' + selectedCard.getAttribute('data-entity-type').toUpperCase() + ']';
+			resultText = type + ' #' + selectedCard.getAttribute('data-entity-id') + ' ' + JSON.parse(selectedCard.getAttribute('data-card-data')).name;
 			console.log(resultText);
 		}
 
