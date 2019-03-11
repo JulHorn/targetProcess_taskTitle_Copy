@@ -11,9 +11,17 @@ document.addEventListener('keydown', function(event){
 		var resultText = '';
 
 		if (selectedCard) {
-			var type = '[' + selectedCard.getAttribute('data-entity-type').toUpperCase() + ']';
-			resultText = type + ' #' + selectedCard.getAttribute('data-entity-id') + ' ' + JSON.parse(selectedCard.getAttribute('data-card-data')).name;
+			var type = selectedCard.getAttribute('data-entity-type');
+			resultText = '[' + type.toUpperCase() + '] #' + selectedCard.getAttribute('data-entity-id') + ' ' + JSON.parse(selectedCard.getAttribute('data-card-data')).name;
 			console.log(resultText);
+		} else {
+			var header = document.querySelector('.view-header');
+			var type = header.querySelector('.tau-entity-icon').textContent;
+			var title = header.querySelector('.view-header__name .editableText').textContent;
+			var id = header.querySelector('.i-role-entity-id').textContent;
+
+			resultText = '[' + type.toUpperCase() + '] ' + id + ' ' + title;
+			console.log('resultText', resultText);
 		}
 
 		const input = document.createElement('input');
